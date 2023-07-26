@@ -1,0 +1,223 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .container-fluid {
+    margin: 0%;
+    margin-top: 1%;
+    width: 100%;
+    .header{
+      margin-left: 2%;
+    }
+
+  }
+
+  .card {
+    box-shadow: 0 0 5px #c4cacc;
+    margin: 2% 2%;
+    padding: 1% 2%;
+  }
+
+  .landlord {
+    display: flex;
+    flex-direction: row;
+
+    .avatar {
+      .avatar-image {
+        min-width: 140px;
+        min-height: 210px;
+        margin: 1% 2%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .infor {
+    overflow: hidden;
+    padding-bottom: 20px;
+  }
+
+  .infor-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow: hidden;
+
+    .infor-col {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      .fill {
+        font-size: 20px;
+        font-weight: 400;
+        margin-left: 10%;
+        display: flex;
+        margin-bottom: 10px;
+
+        .fill-text {
+          min-width: 115px;
+          max-width: 115px;
+          height: 26px;
+          font-weight: 500;
+          word-break: break-word;
+        }
+
+        .fill-input {
+          width: 75%;
+          padding-left: 15px;
+          height: 40px;
+          word-break: break-word;
+          overflow: hidden;
+
+          p {
+            padding: 0;
+            margin: 0;
+          }
+        }
+
+        .fill-input-address {
+          width: 72%;
+          padding-left: 15px;
+          height: 40px;
+          word-break: unset;
+          white-space: nowrap;
+
+          p {
+            padding: 0;
+            margin: 0;
+
+          }
+        }
+      }
+
+      .address {
+        margin-top: 1%;
+      }
+    }
+
+  }
+
+  .card-image {
+    width: 100%;
+    overflow: hidden;
+
+    .image {
+      float: left;
+
+      height: 170px;
+      display: contents;
+
+      img {
+        height: 170px;
+        margin: 1% 1%;
+      }
+    }
+  }
+
+  .card-homestay {
+    overflow: hidden;
+    margin-top: 3%;
+
+    .header {
+      margin-bottom: 20px;
+    }
+
+    .price {
+      p:before {
+        content: '$';
+      }
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px dashed black;
+    color: #fff;
+    background-color: #fff;
+    height: 1px;
+    width: 73%;
+    margin: 0 0% 2% 6%;
+  }
+
+  .serv-faci {
+    .infor-col {
+      .fill-text {
+        min-width: 60% !important;
+        max-width: 60% !important;
+
+        h2 {
+          font-size: 25px;
+          padding: 0%;
+          margin: 0%;
+
+        }
+
+      }
+
+      .fill-input {
+        min-width: 40% !important;
+        max-width: 40% !important;
+      }
+    }
+
+
+  }
+
+  .day-night {
+    justify-content: space-between;
+
+    .fill-text {
+      min-width: none !important;
+      max-width: none !important;
+      font-size: 24px;
+      color: red;
+    }
+
+  }
+
+  .money {
+    color: #7CB342 !important;
+    font-weight: 600 !important;
+  }
+
+  .button {
+
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 2%;
+
+    .btn-accept {
+      padding: 0%;
+      width: 78px;
+      margin: 0 1%;
+      font-size: large;
+      font-weight: 500;
+      background-color: rgb(248, 33, 119);
+
+    }
+
+    .btn-denied {
+      padding: 0 1%;
+      border-radius: 5px;
+      // width: 78px;
+      background-color: #D9D9D9;
+      margin: 0 1%;
+      font-size: large;
+      font-weight: 500;
+    }
+  }
+}
+input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+  }

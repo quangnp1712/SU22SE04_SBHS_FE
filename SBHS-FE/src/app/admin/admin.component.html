@@ -1,0 +1,144 @@
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+</head>
+<div class="wrapper">
+  <div class="sidenav">
+    <div class="logo-container">
+
+      <div class="logo-text" ng-if="collapsed">Stay With Me</div>
+    </div>
+    <hr class="hr-line">
+    <div class="sidenav-container">
+
+
+      <!-- chon -->
+      <!-- Dashboard -->
+      <ul class="sidenav-nav">
+        <li class="sidenav-nav-item">
+          <a class="sidenav-nav-link" routerLink="/Admin/Dashboard" routerLinkActive="active">
+            <i class="sidenav-link-icon fas fa-chart-line"></i>
+            <p class="sidenav-link-text" ng-if="collapsed">Dashboard</p>
+          </a>
+        </li>
+      </ul>
+
+      <!-- chon -->
+      <!-- Request Landlord -->
+      <ul class="sidenav-nav">
+        <li class="sidenav-nav-item">
+          <a class="sidenav-nav-link" routerLink="/Admin/Request" routerLinkActive="active">
+
+            <mat-icon class="sidenav-link-icon">groups</mat-icon>
+            <p class="sidenav-link-text" ng-if="collapsed">Request Landlord</p>
+          </a>
+        </li>
+      </ul>
+
+      <!-- chon -->
+      <!-- Request Homestay -->
+      <ul class="sidenav-nav">
+        <li class="sidenav-nav-item">
+          <a class="sidenav-nav-link" routerLink="/Admin/RequestHomestay" routerLinkActive="active">
+            <i class="sidenav-link-icon fa fa-house-chimney-user"></i>
+            <p class="sidenav-link-text" ng-if="collapsed">Request Homestay</p>
+          </a>
+        </li>
+      </ul>
+      <!-- chon , level -->
+      <!-- Register -->
+      <!-- <ul class="sublevel-nav">
+        <li class="sublevel-nav-item">
+          <a routerLink="/Admin/RequestHomestay" routerLinkActive="active" class="sublevel-nav-link">
+            <i class="sublevel-link-icon fa fa-circle"></i>
+            <span class="sublevel-link-text"> Request Homestay </span>
+          </a>
+        </li>
+        </ul> -->
+        <!-- Update -->
+        <!-- <li class="sublevel-nav-item">
+          <a href="" class="sublevel-nav-link">
+            <i class="sublevel-link-icon fa fa-circle"></i>
+            <span class="sublevel-link-text"> Update </span>
+          </a>
+        </li> -->
+        <!-- Delete -->
+        <!-- <li class="sublevel-nav-item">
+          <a href="" class="sublevel-nav-link">
+            <i class="sublevel-link-icon fa fa-circle"></i>
+            <span class="sublevel-link-text"> Delete </span>
+          </a>
+        </li>
+      </ul> -->
+
+
+      <!-- chon -->
+
+
+      <!-- Special Day -->
+      <ul class="sidenav-nav">
+        <li class="sidenav-nav-item">
+          <a class="sidenav-nav-link" routerLink="/Admin/SpecialDay" routerLinkActive="active">
+            <i class="sidenav-link-icon fas fa-calendar-alt"></i>
+            <p class="sidenav-link-text" ng-if="collapsed">SpecialDay</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- div body -->
+  <div class="body">
+    <!-- header search -->
+
+    <div class="header navbar navbar-top border-bottom ">
+      <div class="container-fluid">
+        <div class="row user ">
+          <div class="col icon ">
+           <img [src]="avatarUrl" class="rounded-pill avatar">
+          </div>
+          <div class="col username">
+            <div class="name">{{username}} </div>
+            <div class="roles">Admin</div>
+          </div>
+          <div class="col collapse-avatar">
+            <button mat-icon-button [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with a menu" class="btn-collapse-avatar">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <a mat-menu-item routerLink="/Admin/Profile">
+                <mat-icon>account_circle</mat-icon>
+                <span>Profile</span>
+              </a>
+              <button mat-menu-item (click)="logout()">
+                <mat-icon>logout</mat-icon>
+                <span>Logout</span>
+              </button>
+
+            </mat-menu>
+          </div>
+          <div class="col logout">
+            <button mat-icon-button (click)="logout()" class="btn-logout">
+              <i class="fa fa-sign-out"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Body page -->
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!-- BOOTSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+  integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+  integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

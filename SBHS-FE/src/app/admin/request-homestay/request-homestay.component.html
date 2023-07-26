@@ -1,0 +1,73 @@
+<div class="container-fluid">
+
+  <div class="header">
+    <h1>Request List</h1>
+  </div>
+  <div class="body card">
+    <div class="body-container">
+      <div style="float:left; margin-right:15px;">
+        <select [(ngModel)]="status" (click)="getStatusHomestay()">
+          <option>All</option>
+          <option>Pending</option>
+          <option>Accept</option>
+          <option>Reject</option>
+        </select>
+      </div>
+
+
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of values| paginate:{
+          itemsPerPage: tableSize,
+          currentPage: page,
+          totalItems: count
+        };
+        let i = index">
+          <td>{{post.id}}</td>
+          <td>{{post.createdBy}}</td>
+          <td>{{post.createdDate}}</td>
+          <td>{{post.type}}</td>
+          <td>{{post.status}}</td>
+          <!-- <td>{{post}}</td> -->
+          <td>
+            <button mat-icon-button color="primary" (click)="onItemSelector(post.id);"
+              routerLink="/Admin/RequestHomestay/RequestHomestayDetail" routerLinkActive="active"><i
+                class="fa-solid fa-eye"></i></button>
+            <button mat-icon-button color="accent" (click)="onItemSelector(post.id);" (click)="accept()"><i
+                class="fa-solid fa-check"></i></button>
+            <button mat-icon-button color="warn" (click)="onItemSelector(post.id);" (click)="reject()"><i
+                class="fa-solid fa-xmark"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="col-sm-9">
+        <div >
+          choose item in page:
+          <select (change)="onTableSizeChange($event)">
+            <option *ngFor="let size of tableSizes">
+              {{size}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+      </pagination-controls>
+      </div>
+
+    </div>
+  </div>
+</div>

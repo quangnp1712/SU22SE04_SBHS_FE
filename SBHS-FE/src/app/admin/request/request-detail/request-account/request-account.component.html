@@ -1,0 +1,111 @@
+<div class="wrapper">
+  <div class="header">
+    <h1>Request Register Landlord Acccount</h1>
+  </div>
+  <div class="body ">
+    <!-- <div *ngIf="registerError != null"> <h1 style="color: red;">{{registerError}}</h1></div> -->
+    <div class="body-container card">
+      <div class="row-avatar-infor">
+        <div class="avatar">
+          <img [src]="avatarUrl" alt="avatar">
+        </div>
+        <div class="infor">
+          <div class="col-left">
+            <!-- Username -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Username:</p>
+              </div>
+              <div class="fill-input">
+                <p>{{username}}</p>
+              </div>
+            </div>
+            <!-- Email -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Email:</p>
+              </div>
+              <div class="fill-input">
+                <p>{{email}}</p>
+              </div>
+            </div>
+            <!-- Gender  -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Gender:</p>
+              </div>
+              <div class="fill-input">
+                <p>{{gender}}</p>
+              </div>
+            </div>
+
+
+            <!-- Dob  -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Day of Birth:</p>
+              </div>
+              <div class="fill-input">
+                <p>{{dob}}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-right">
+            <!-- Address -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Address:</p>
+              </div>
+              <div class="fill-input">
+                <p>{{address}}</p>
+              </div>
+            </div>
+            <!-- ID -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Citizen ID:</p>
+              </div>
+              <div class="fill-input">
+                <p>{{citizenIdentificationString}}</p>
+              </div>
+            </div>
+            <!-- Phone -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Phone:</p>
+              </div>
+              <div class="fill-input">
+                <p>{{phone}}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="IDcard">
+        <h1>Image Citizen Identification </h1>
+        <div class="image">
+          <div class="after">
+            <h2>Font</h2>
+            <img [src]="citizenIdentificationUrlFont" alt="After">
+          </div>
+          <div class="before">
+            <h2>Back</h2>
+            <img [src]="citizenIdentificationUrlBack" alt="After">
+          </div>
+
+        </div>
+      </div>
+      <div class="button">
+
+        <button class="btn-denied"  mat-raised-button (click)="reject()">Denied</button>
+        <button class="btn-accept"  mat-raised-button (click)="accept()">Accept</button>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,466 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .body-header {
+    background-image: url("/assets/image/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 98vh;
+    overflow: auto;
+
+    .header {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      padding-top: 30px;
+
+      .logo {
+        width: 34vw;
+        // justify-content: center;
+        display: flex;
+        margin-left: 4vw;
+
+
+        .logo-text {
+          width: 235px;
+          max-width: 235px;
+          height: 110px;
+          max-height: 110px;
+          border-bottom-left-radius: 50px;
+          border-bottom-right-radius: 50px;
+          background-color: #E0B973;
+          text-align: center;
+          cursor: pointer;
+
+
+          .swm {
+            font-size: 30px;
+            font-weight: 400;
+            margin-top: 22px;
+          }
+
+          .homestay {
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: 17px;
+          }
+        }
+
+
+
+
+      }
+
+      .navb {
+        width: 66vw;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        text-align: center;
+        padding-right: 70px;
+        height: 55px;
+
+
+        .menu {
+          font-size: 22px;
+          font-weight: 400;
+          text-align: center;
+          width: 20%;
+          height: 50px;
+          line-height: 50px;
+          margin: 0 3%;
+          cursor: pointer;
+          margin-top: 5px;
+          overflow: hidden;
+
+          a {
+            text-decoration: none;
+            color: black;
+            padding: 1px 1%;
+          }
+
+          .active {
+            border-bottom: 2px solid black;
+          }
+        }
+        .navb-menu-homestay{
+          width: 26%;
+        }
+      }
+
+
+
+    }
+
+    .body-register {
+      display: flex;
+
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-bottom: 50px;
+
+      .content-body {
+        display: flex;
+        flex-direction: column;
+        padding-left: 4vw;
+        padding-top: 50px;
+
+
+        .welcome {
+          font-family: "Montserrat";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 36px;
+          height: 36px;
+          line-height: 36px;
+
+        }
+
+        .body-swm {
+          font-family: 'Adobe Garamond Pro';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 80px;
+          letter-spacing: 0.07em;
+          height: 120px;
+          line-height: 120px;
+        }
+
+        .body-homestay {
+          font-family: 'Adobe Garamond Pro';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 33px;
+          height: 33px;
+          line-height: 33px;
+
+          letter-spacing: 0.3em;
+        }
+      }
+
+      a {
+        text-decoration: none;
+
+      }
+
+      .register-container {
+        background-color: #E0B973;
+        border-radius: 1rem;
+        height: 420px;
+        max-height: 430px;
+        margin: 50px 55px 0 55px;
+        max-width: 453px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: flex-start;
+        font-family: Helvetica, Arial, sans-serif;
+        padding: 2.7% 1.8%;
+        ;
+
+        .list-homestay {
+          font-size: 36px;
+          font-weight: 700;
+          height: 36px;
+          line-height: 36px;
+          text-align: center;
+          width: 100%;
+        }
+
+        .swm-homestay {
+          font-size: 42px;
+          text-align: center;
+          font-weight: 800;
+          color: #ff5e00;
+          height: 42px;
+          line-height: 42px;
+          margin-top: 15px;
+        }
+
+        .swm-homestay,
+        .on {
+          margin-top: 10px;
+          text-align: center;
+          width: 100%;
+        }
+
+        .content-homestay {
+          font-size: 20px;
+          height: 54px;
+          line-height: 22px;
+          margin-left: 8px;
+          margin-top: 40px;
+        }
+
+        .btn-register {
+          background-color: #f9af24;
+          border-radius: 13px;
+          cursor: pointer;
+          text-align: center;
+          width: 100%;
+          font-size: 22px;
+          font-weight: 600;
+          height: 55px;
+          line-height: 55px;
+          margin-top: 20px;
+        }
+
+        .login {
+          text-align: center;
+          width: 100%;
+          margin-top: 20px;
+          font-size: 15px;
+          height: 16px;
+          line-height: 16px;
+
+        }
+
+
+      }
+
+
+
+    }
+
+
+
+
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  .menu:hover {
+    background-color: rgb(255 255 255 / 32%);
+    border-radius: 8px;
+  }
+
+  .rorate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .trigle {
+      margin-top: -3vw;
+      border-color: transparent transparent #14274A transparent;
+      border-style: solid;
+      border-width: 0px 3vw 3vw 3vw;
+      height: 0px;
+      width: 0px;
+    }
+
+
+  }
+
+  .footer {
+
+    background-color: #14274A;
+    display: flex;
+    flex-direction: column;
+
+
+
+
+
+    .contact {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      color: white;
+      flex-wrap: wrap;
+
+      .col-contact {
+        text-align: center;
+        width: 352px;
+        margin-bottom: 20px;
+
+        .swm {
+          margin-top: 22px;
+          font-size: 30px;
+          font-weight: 400;
+        }
+
+        .homestay {
+          margin-top: 10px;
+          font-size: 18px;
+        }
+
+        .mail {
+          margin-top: 30px;
+
+        }
+      }
+
+      .col-contact-about-us {
+        width: 345px;
+        text-align: left;
+        padding-left: 130px;
+        font-size: 17px;
+
+        .about-us {
+          margin-top: 20px;
+        }
+      }
+
+      .col-contact-link {
+        width: 317px;
+        text-align: left;
+        padding-left: 110px;
+        font-size: 17px;
+
+        .about-us {
+          color: white;
+          margin-top: 20px;
+
+          a {
+            color: white;
+            padding: 0%;
+            margin: 0%;
+
+            i {
+              font-size: 16px;
+              display: inline;
+            }
+
+            span {
+              margin-left: 16px;
+            }
+
+            .twiter {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+
+      .col-contact-copyright {
+        width: 345px;
+        text-align: left;
+        color: white;
+        font-size: 17px;
+        padding-left: 130px;
+
+        .col-1 {
+          width: 100%;
+          margin-top: 20px;
+
+        }
+      }
+    }
+
+
+  }
+
+  .body {
+    height: 50vh;
+  }
+
+}
+
+@media screen and (max-width:1455px) {
+  .register-container {
+    width: 100%;
+    margin-left: 34vw !important;
+    margin-right: 34vw !important;
+  }
+
+}
+@media screen and (max-width:1200px) {
+  .register-container {
+    width: 100%;
+    margin-left: 31vw !important;
+    margin-right: 31vw !important;
+  }
+}
+@media screen and (max-width:1000px) {
+  .register-container {
+    width: 100%;
+    margin-left: 28vw !important;
+    margin-right: 28vw !important;
+  }
+  .col-contact-link{
+    width: 352px !important;
+  }
+}
+@media screen and (max-width:860px) {
+  .register-container {
+    width: 100%;
+    margin-left: 26vw !important;
+    margin-right: 26vw !important;
+  }
+  .body-swm{
+    font-size: 77px !important;
+    height: 115px !important;
+    line-height: 115px !important;
+  }
+
+}
+@media screen and (max-width:750px) {
+  .register-container {
+    width: 100%;
+    margin-left: 22vw !important;
+    margin-right: 22vw !important;
+  }
+  .body-swm{
+    font-size: 64px !important;
+    height: 99.6px !important;
+    line-height: 99.6px !important;
+  }
+  .navb{
+    padding-right: 0 !important;
+  }
+}
+@media screen and (max-width:600px) {
+  .register-container {
+    width: 100%;
+    margin-left: 15vw !important;
+    margin-right: 15vw !important;
+  }
+  .body-swm{
+    font-size: 54px !important;
+    height: 81px !important;
+    line-height: 81px !important;
+  }
+  .navb{
+    flex-wrap: wrap !important;
+  }
+  .welcome{
+    font-size: 30px !important;
+  }
+}
+@media screen and (max-width:500px) {
+  .register-container {
+    width: 100%;
+    margin-left: 11vw !important;
+    margin-right: 11vw !important;
+  }
+  .body-swm{
+    font-size: 44px !important;
+    height: 66px !important;
+    line-height: 66px !important;
+  }
+}
+@media screen and (max-width:380px) {
+  .register-container {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .body-swm{
+    font-size: 33px !important;
+    height: 51.6px !important;
+    line-height: 51.6px !important;
+  }
+  .swm-homestay{
+    font-size: 39px !important;
+  }
+
+}

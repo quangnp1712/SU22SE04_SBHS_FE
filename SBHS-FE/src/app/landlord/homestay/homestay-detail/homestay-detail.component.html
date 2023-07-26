@@ -1,0 +1,560 @@
+<div class="container">
+  <!--        -->
+  <!-- Step 1 -->
+  <!--        -->
+
+  <div class="input-content card">
+    <div class="header">
+      <h1> 1 - Basic Information</h1>
+    </div>
+    <div class="add-input">
+      <div class="row">
+        <div class="col left">
+          <!-- name -->
+          <div>
+            <mat-form-field class="fill fill-row-left" appearance="legacy">
+              <mat-label>Homestay's Name</mat-label>
+              <input [(ngModel)]="value.name" matInput required [readonly]="isReadonly" name="homestayname">
+            </mat-form-field>
+          </div>
+          <!-- check in -->
+          <div>
+            <mat-form-field class="fill fill-row-left" appearance="legacy">
+              <mat-label>Check-in time</mat-label>
+              <input id="check-in" type="time" name="check-in" [readonly]="isReadonly" [(ngModel)]="value.checkInTime"
+                matInput required>
+            </mat-form-field>
+          </div>
+
+        </div>
+        <div class="col right">
+          <div>
+            <mat-form-field class="fill fill-row-right" appearance="legacy">
+              <mat-label>Number of Room</mat-label>
+              <input id="number" name="number" type="number" [readonly]="isReadonly" [(ngModel)]="value.numberOfRoom"
+                required matInput>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="fill fill-row-right" appearance="legacy">
+              <mat-label>Check-out time</mat-label>
+              <input id="checkout" type="time" name="check-out" [readonly]="isReadonly" [(ngModel)]="value.checkOutTime"
+                matInput required>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <!-- Price normal day-->
+        <div>
+          <mat-form-field class="fill" appearance="legacy">
+            <mat-label>Normal day: Price (VND)</mat-label>
+            <input [(ngModel)]="value.homestayPriceList[0].price" [readonly]="isReadonly" name="normal" type="number"
+              matInput required>
+          </mat-form-field>
+        </div>
+        <!-- Price weekend day-->
+        <div>
+          <mat-form-field class="fill" appearance="legacy">
+            <mat-label>Weekend: Price (VND)</mat-label>
+            <input [(ngModel)]="value.homestayPriceList[1].price" [readonly]="isReadonly" name="weekend" type="number"
+              matInput required>
+          </mat-form-field>
+        </div>
+        <form>
+          <!-- Price special day-->
+          <h1>Special Day</h1>
+          <div class="special-step4">
+            <div *ngFor="let item of ListSpecialDay; let i = index ">
+
+              <h2>{{i+1}}. {{item.specialDayList.description}} </h2>
+
+              <div>
+                <!-- day -->
+                <div class="row">
+                  <!-- name of special day -->
+
+                  <!-- Start -->
+                  <div class="col left">
+                    <div>
+                      Start day
+                    </div>
+                    <!-- day / month -->
+                    <div class="start-day">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Day</mat-label>
+                        <input type="text" matInput value="{{item.specialDayList.startDay}}" readonly
+                          style="cursor:unset">
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Month</mat-label>
+                        <div *ngFor="let name of valueMonthName; let i = index">
+                          <input *ngIf="i == item.specialDayList.startMonth" type="text" matInput [value]="name"
+                            readonly style="cursor:unset">
+                        </div>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <p class="line-"> - </p>
+                  <div class="col right">
+                    <div>
+                      End day
+                    </div>
+                    <!-- day / month -->
+                    <div>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Day</mat-label>
+                        <input type="text" matInput value="{{item.specialDayList.endDay}}" readonly
+                          style="cursor:unset">
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Month</mat-label>
+                        <div *ngFor="let name of valueMonthName; let i = index">
+                          <input *ngIf="i == item.specialDayList.endMonth" type="text" matInput [value]="name" readonly
+                            style="cursor:unset">
+                        </div>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <!-- price -->
+                  <div class="col price">
+                    <div>
+                      Price
+                    </div>
+                    <mat-form-field appearance="outline">
+                      <mat-label>Price (VND)</mat-label>
+                      <input name="price" id="price" type="number" [readonly]="isReadonly" matInput
+                        [(ngModel)]="item.price">
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </form>
+        <!-- address -->
+        <div>
+          <mat-form-field class="fill" appearance="legacy">
+            <mat-label>Address</mat-label>
+            <input name="homestayaddress" type="text" matInput [readonly]="isReadonly" [(ngModel)]="value.address"
+              required>
+
+          </mat-form-field>
+        </div>
+        <!-- description -->
+        <mat-form-field class=" fill" appearance="legacy">
+          <mat-label>Description</mat-label>
+          <input type="text" matInput disabled>
+        </mat-form-field>
+        <div class="editor">
+          <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+          <ngx-editor id="edit-2" class="edit-text" [editor]="editor" name="description" [(ngModel)]="value.description"
+            [disabled]="isReadonly">
+          </ngx-editor>
+        </div>
+      </div>
+
+      <div class="row upl-img">
+        <div class="col">
+          <div class="add-img">
+            <div class="img-homestay">
+              <h1>Image Homestay</h1>
+              <div class="show-image col" *ngFor="let item of homestayImage">
+                <div>
+                  <img [src]="item.url">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="add-img">
+            <div class="img-homestayLicense col">
+              <h1>Image Homestay License</h1>
+              <div class=" show-image col">
+                <div>
+                  <img src="{{homestayLicense}}">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <!--        -->
+  <!-- Step 2 -->
+  <!--        -->
+  <div class="input-content card">
+    <div class="header">
+      <h1> 2 - Facility</h1>
+    </div>
+    <div class="add-input ">
+      <h1>Common Facility</h1>
+
+      <div class="row">
+        <div class="col ">
+          <!-- ngFor -->
+          <div *ngFor="let facility of value.homestayCommonFacilities ; let i = index">
+            <div class="row-fill" *ngIf="i % 2 == 0 ">
+              <div class=" icon">
+                <mat-icon fontIcon="devices"></mat-icon>
+              </div>
+              <div class=" text" *ngIf="isAddition === false">
+                <p>{{facility.name}}</p>
+              </div>
+              <div class=" input" *ngIf="isAddition === true">
+                <div class="col-input">
+                  <input [(ngModel)]="facility.name" type="text" class="col-input-amount" [readonly]="isReadonly"
+                    matInput />
+                </div>
+              </div>
+              <div class=" checkbox">
+              </div>
+              <div class=" input">
+                <div class="col-input">
+                  <input [(ngModel)]="facility.amount" type="number" class="col-input-amount" [readonly]="isReadonly"
+                    matInput />
+                </div>
+              </div>
+              <div class="icon-x" matRipple *ngIf="isAddition === true">
+                <i class="fa-solid fa-xmark" (click)="removeCommonFacility(i)"></i>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col col-right-2">
+          <!-- ngFor -->
+          <div *ngFor="let facility of value.homestayCommonFacilities ; let i = index">
+            <div class="row-fill" *ngIf="i % 2 == 1 ">
+              <div class=" icon">
+                <mat-icon fontIcon="devices"></mat-icon>
+              </div>
+              <div class=" text" *ngIf="isAddition === false">
+                <p>{{facility.name}}</p>
+              </div>
+              <div class=" input" *ngIf="isAddition === true">
+                <div class="col-input">
+                  <input [(ngModel)]="facility.name" type="text" class="col-input-amount" [readonly]="isReadonly"
+                    matInput />
+                </div>
+              </div>
+              <div class=" checkbox">
+
+              </div>
+              <div class=" input">
+                <div class="col-input">
+                  <input [(ngModel)]="facility.amount" type="number" class="col-input-amount" [readonly]="isReadonly"
+                    matInput />
+                </div>
+              </div>
+              <div class="icon-x" matRipple *ngIf="isAddition === true">
+                <i class="fa-solid fa-xmark" (click)="removeCommonFacility(i)"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="add-input ">
+        <!-- Add Facility -->
+
+
+        <h1>Additional Facility</h1>
+        <div class="row" >
+          <div class="col ">
+            <!-- ngFor -->
+            <div *ngFor="let facility of value.homestayAdditionFacilities ; let i = index">
+              <div class="row-fill" *ngIf="i % 2 == 0 ">
+                <div class=" icon">
+                  <mat-icon fontIcon="devices"></mat-icon>
+                </div>
+                <div class=" text" *ngIf="isAddition === false">
+                  <p>{{facility.name}}</p>
+                </div>
+                <div class=" input" *ngIf="isAddition === true">
+                  <div class="col-input">
+                    <input [(ngModel)]="facility.name" type="text" class="col-input-amount" [readonly]="isReadonly"
+                      matInput />
+                  </div>
+                </div>
+                <div class=" checkbox">
+
+                </div>
+                <div class=" input">
+                  <div class="col-input">
+                    <input [(ngModel)]="facility.amount" type="number" class="col-input-amount" [readonly]="isReadonly"
+                      matInput />
+                  </div>
+                </div>
+                <div class="icon-x" matRipple *ngIf="isAddition === true">
+                  <i class="fa-solid fa-xmark" (click)="removeFacility(i)"></i>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="col col-right-2">
+            <!-- ngFor -->
+            <div *ngFor="let facility of value.homestayAdditionFacilities ; let i = index">
+              <div class="row-fill" *ngIf="i % 2 == 1 ">
+                <div class=" icon">
+                  <mat-icon fontIcon="devices"></mat-icon>
+                </div>
+                <div class=" text" *ngIf="isAddition === false">
+                  <p>{{facility.name}}</p>
+                </div>
+                <div class=" input" *ngIf="isAddition === true">
+                  <div class="col-input">
+                    <input [(ngModel)]="facility.name" type="text" class="col-input-amount" [readonly]="isReadonly"
+                      matInput />
+                  </div>
+                </div>
+                <div class=" checkbox">
+
+                </div>
+                <div class=" input">
+                  <div class="col-input">
+                    <input [(ngModel)]="facility.amount" type="number" class="col-input-amount" [readonly]="isReadonly"
+                      matInput />
+                  </div>
+                </div>
+                <div class="icon-x" matRipple *ngIf="isAddition === true">
+                  <i class="fa-solid fa-xmark" (click)="removeFacility(i)"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="isAddition === true">
+          <div class="col ">
+            <div *ngFor="let value of newFacility; let i = index">
+              <div class=" row-fill" *ngIf="i % 2 == 0">
+                <div class=" icon"><i class="fa-solid fa-plus"></i></div>
+                <div class=" input">
+                  <div class="col-input add">
+                    <input autocomplete="off" type="text" [(ngModel)]="value.name" #name="ngModel" name="value{{i}}"
+                      placeholder="New Facility" class="col-input-amount value-name" matInput />
+                  </div>
+                </div>
+                <div class=" checkbox">
+
+                </div>
+                <div class=" input">
+                  <div class="col-input">
+                    <input autocomplete="off" type="number" min="0" [(ngModel)]="value.amount"
+                       #name="ngModel" name="value{{i}}" class="col-input-amount" matInput
+                      placeholder="Amount" />
+                  </div>
+                </div>
+                <div class="icon-x" matRipple> <i class="fa-solid fa-xmark" (click)="removeFacility(i)"></i></div>
+              </div>
+            </div>
+            <div class="click row-fill" matRipple (click)="addFacility()">
+              <div class=" icon"><i class="fa-solid fa-plus"></i></div>
+              <div class=" text">
+                <p>Add Facility</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col col-right-2">
+            <div *ngFor="let value of newFacility; let i = index">
+              <div class=" row-fill" *ngIf="i % 2 == 1">
+                <div class=" icon"><i class="fa-solid fa-plus"></i></div>
+                <div class=" input">
+                  <div class="col-input add">
+                    <input autocomplete="off" type="text" [(ngModel)]="value.name" #name="ngModel" name="value{{i}}"
+                      placeholder="New Facility" class="col-input-amount value-name" matInput />
+                  </div>
+                </div>
+                <div class=" checkbox">
+
+                </div>
+                <div class=" input">
+                  <div class="col-input">
+                    <input autocomplete="off" type="number" min="0" [(ngModel)]="value.amount"
+                       #name="ngModel" name="value{{i}}" class="col-input-amount" matInput
+                      placeholder="Amount" />
+                  </div>
+                </div>
+                <div class="icon-x" matRipple> <i class="fa-solid fa-xmark" (click)="removeFacility(i)"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br>
+    <!--        -->
+    <!-- Step 3 -->
+    <!--        -->
+    <div class="input-content card">
+
+      <div class="header">
+        <h1> 3 - Service</h1>
+      </div>
+      <div class="add-input ">
+        <h1>Common Service</h1>
+
+
+
+        <!--  -->
+
+        <div class="row">
+          <div class="col ">
+            <!-- ngFor -->
+            <div *ngFor="let service of value.homestayServices ; let i = index">
+              <div class="row-fill" *ngIf="i % 2 == 0 ">
+                <div class=" icon"><i class="fa-solid fa-martini-glass-citrus"></i></div>
+                <div class=" text" *ngIf="isAddition === false">
+                  <p>{{service.name}}</p>
+                </div>
+                <div class=" input" *ngIf="isAddition === true">
+                  <div class="col-input">
+                    <input [(ngModel)]="service.name" type="text" class="col-input-amount" [readonly]="isReadonly"
+                      matInput />
+                  </div>
+                </div>
+                <div class=" checkbox">
+
+                </div>
+                <div class=" input">
+                  <div class="col-input">
+                    <input [(ngModel)]="service.price" type="number" class="col-input-amount" [readonly]="isReadonly"
+                      matInput />
+                  </div>
+                </div>
+                <div class="icon-x" matRipple *ngIf="isAddition === true">
+                  <i class="fa-solid fa-xmark" (click)="removeCommonService(i)"></i>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="col col-right-2">
+            <!-- ngFor -->
+            <div *ngFor="let service of value.homestayServices ; let i = index">
+              <div class="row-fill" *ngIf="i % 2 == 1 ">
+                <div class=" icon"><i class="fa-solid fa-martini-glass-citrus"></i></div>
+                <div class=" text" *ngIf="isAddition === false">
+                  <p>{{service.name}}</p>
+                </div>
+                <div class=" input" *ngIf="isAddition === true">
+                  <div class="col-input">
+                    <input [(ngModel)]="service.name" type="text" class="col-input-amount" [readonly]="isReadonly"
+                      matInput />
+                  </div>
+                </div>
+                <div class=" checkbox">
+
+                </div>
+                <div class=" input">
+                  <div class="col-input">
+                    <input [(ngModel)]="service.price" type="number" class="col-input-amount" [readonly]="isReadonly"
+                      matInput />
+                  </div>
+                </div>
+                <div class="icon-x" matRipple *ngIf="isAddition === true">
+                  <i class="fa-solid fa-xmark" (click)="removeCommonService(i)"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="add-input ">
+        <h1>Addition Service</h1>
+
+
+
+        <!--  -->
+
+        <div class="row" *ngIf="isAddition === true">
+          <div class="col ">
+            <div *ngFor="let value of newServices; let i = index">
+              <div class=" row-fill" *ngIf="i % 2 == 0">
+                <div class=" icon"><i class="fa-solid fa-plus"></i></div>
+                <div class=" input">
+                  <div class="col-input add">
+                    <input autocomplete="off" type="text" [(ngModel)]="value.name" #name="ngModel" name="value{{i}}"
+                      placeholder="New Service" class="col-input-amount value-name" matInput />
+                  </div>
+                </div>
+                <div class=" checkbox">
+                  <mat-checkbox color="primary" [(ngModel)]="value.status" name="value{{i}}">
+                  </mat-checkbox>
+                </div>
+                <div class=" input">
+                  <div class="col-input">
+                    <input autocomplete="off" type="number" min="0" [(ngModel)]="value.price"
+                      [disabled]="!value.status" #name="ngModel" name="value{{i}}" class="col-input-amount" matInput
+                      placeholder="Price" />
+                  </div>
+                </div>
+                <div class="icon-x" matRipple> <i class="fa-solid fa-xmark" (click)="removeService(i)"></i></div>
+              </div>
+            </div>
+            <div class="click row-fill" matRipple (click)="addService()">
+              <div class=" icon"><i class="fa-solid fa-plus"></i></div>
+              <div class=" text">
+                <p>Add Service</p>
+              </div>
+            </div>
+          </div>
+          <!-- Add service -->
+          <div class="col col-right-2">
+            <div *ngFor="let value of newServices; let i = index">
+              <div class=" row-fill" *ngIf="i % 2 == 1">
+                <div class=" icon"><i class="fa-solid fa-plus"></i></div>
+                <div class=" input">
+                  <div class="col-input add">
+                    <input id="name" type="text" [(ngModel)]="value.name" #name="ngModel" name="value{{i}}"
+                      placeholder="New Service" class="col-input-amount value-name" matInput />
+                  </div>
+                </div>
+                <div class=" checkbox">
+                  <mat-checkbox color="primary" [(ngModel)]="value.status" #name="ngModel" name="value{{i}}">
+                  </mat-checkbox>
+                </div>
+                <div class=" input">
+                  <div class="col-input">
+                    <input id="amount" type="number" min="0" [disabled]="!value.status" [(ngModel)]="value.price"
+                      #name="ngModel" name="value{{i}}" class="col-input-amount" matInput placeholder="Price" />
+                  </div>
+                </div>
+                <div class="icon-x" matRipple>
+                  <i class="fa-solid fa-xmark" (click)="removeService(i)"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+  <div class="add-btn">
+    <button class="btn-back" mat-raised-button routerLink="../../Homestay">Back</button>
+    <button class="btn-next submit" color="primary" *ngIf="isAddition === false" mat-raised-button (click)="onUpdateHomestay()">Edit</button>
+    <button class="btn-next submit" color="primary" *ngIf="isAddition === true" mat-raised-button (click)="update()">Submit</button>
+
+  </div>
+</div>

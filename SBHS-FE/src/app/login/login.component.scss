@@ -1,0 +1,296 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .body-header {
+    background-image: url("/assets/image/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 97vh;
+    overflow: auto;
+
+    .header {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      padding-top: 30px;
+
+      .logo {
+        width: 34vw;
+        // justify-content: center;
+        display: flex;
+        margin-left: 4vw;
+
+
+        .logo-text {
+          width: 235px;
+          max-width: 235px;
+          height: 110px;
+          max-height: 110px;
+          border-bottom-left-radius: 50px;
+          border-bottom-right-radius: 50px;
+          background-color: #E0B973;
+          text-align: center;
+          cursor: pointer;
+
+
+          .swm {
+            font-size: 30px;
+            font-weight: 400;
+            margin-top: 22px;
+          }
+
+          .homestay {
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: 17px;
+          }
+        }
+
+
+
+
+      }
+
+      .navb {
+        width: 66vw;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        text-align: center;
+        padding-right: 70px;
+
+
+        .menu {
+          font-size: 22px;
+          font-weight: 400;
+          text-align: center;
+          width: 20%;
+          height: 50px;
+          line-height: 50px;
+          margin: 0 3%;
+          cursor: pointer;
+          margin-top: 5px;
+
+          a {
+            text-decoration: none;
+            color: black;
+            padding: 1px 1%;
+          }
+          .active{
+            border-bottom: 2px solid black;
+          }
+        }
+      }
+
+
+
+    }
+
+    .body-login {
+      display: flex;
+      justify-content: center;
+      margin-top: 0.7%;
+      margin-bottom: 3%;
+      a {
+        text-decoration: none;
+
+      }
+
+      .login-container {
+        width: 348px;
+        height: 478px;
+        background-color: #E0B973;
+        border-radius: 1rem;
+        text-align: center;
+        .mess{
+          width: 100%;
+          height: 35px;
+          margin-top: 10px;
+        }
+
+        .login-header {
+          font-size: 33px;
+          font-weight: 600;
+          margin-top: 10px;
+          margin-bottom: 25px;
+          height: 35px;
+          line-height: 35px;
+        }
+
+        .mat-form-field {
+          width: 75%;
+        }
+
+        .btn-login {
+          width: 75%;
+          border-radius: 13px;
+          background-color: #f9af24;
+          cursor: pointer;
+          font-size: 20px;
+          height: 55px;
+          font-weight: 600;
+          margin-top: 2%;
+        }
+
+        .rember-me {
+          text-align: left;
+          margin-left: 13%;
+        }
+
+        .forgot-pass {
+          margin-top: 5%;
+          color: blue;
+
+        }
+
+        .register {
+          margin-top: 5%;
+
+          a {
+            color: #ff6500;
+            font-weight: 700;
+            font-size: 17px;
+          }
+        }
+      }
+
+
+
+    }
+
+
+
+
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  .menu:hover {
+    background-color: rgba(255, 255, 255, 0.13);
+    border-radius: 8px;
+  }
+
+
+  .footer {
+
+    background-color: #14274A;
+    display: flex;
+    flex-direction: column;
+
+
+    .rorate {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .trigle {
+        margin-top: -3vw;
+        border-color: transparent transparent #14274A transparent;
+        border-style: solid;
+        border-width: 0px 3vw 3vw 3vw;
+        height: 0px;
+        width: 0px;
+      }
+
+
+    }
+
+    .contact {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      color: white;
+      flex-wrap: nowrap;
+
+      .col-contact {
+        text-align: center;
+        width: 25%;
+        margin-bottom: 20px;
+
+        .swm {
+          margin-top: 22px;
+          font-size: 30px;
+          font-weight: 400;
+        }
+
+        .homestay {
+          margin-top: 10px;
+          font-size: 18px;
+        }
+
+        .mail {
+          margin-top: 30px;
+
+        }
+      }
+
+      .col-contact-about-us {
+        width: 25%;
+        text-align: left;
+        padding-left: 8%;
+        font-size: 17px;
+
+        .about-us {
+          margin-top: 20px;
+        }
+      }
+
+      .col-contact-link {
+        width: 25%;
+        text-align: left;
+        padding-left: 7%;
+        font-size: 17px;
+
+        .about-us {
+          color: white;
+          margin-top: 20px;
+
+          a {
+            color: white;
+            padding: 0%;
+            margin: 0%;
+
+            i {
+              font-size: 16px;
+            }
+
+            span {
+              margin-left: 16px;
+            }
+
+            .twiter {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+
+      .col-contact-copyright {
+        width: 25%;
+        text-align: left;
+        color: white;
+        font-size: 17px;
+        margin-left: 5%;
+
+        .col-1 {
+          width: 100%;
+          margin-top: 20px;
+
+        }
+      }
+    }
+
+
+  }
+
+
+}

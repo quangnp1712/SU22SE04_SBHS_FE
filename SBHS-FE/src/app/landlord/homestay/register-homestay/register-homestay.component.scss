@@ -1,0 +1,576 @@
+.container {
+  min-height: 89vh;
+
+  .mat-stepper-horizontal,
+  .mat-stepper-vertical {
+    background-color: unset;
+  }
+
+  .input-content {
+    width: 99%;
+
+    .add-input {
+      background: white;
+      padding-bottom: 30px;
+
+      .special {
+        width: 84%;
+        margin-left: 8%;
+        padding-top: 3%;
+        z-index: -1;
+
+        .panel-special {
+          background-color: rgba(255, 255, 255, 0.65);
+
+          .panel-header-special {
+            font-size: large;
+            padding-left: 10px;
+          }
+
+          .col {
+            min-width: 150px;
+          }
+
+          .right {
+            padding-left: 0%;
+            max-width: 38%;
+
+            .mat-form-field {
+              width: 48.5%;
+              min-width: 157px;
+            }
+          }
+
+          .left {
+            padding-right: 0%;
+            max-width: 40%;
+
+
+            .mat-form-field {
+              width: 48.5%;
+              min-width: 157px;
+            }
+          }
+
+          .line- {
+            width: fit-content;
+
+            padding-top: 55px;
+            margin: 5px;
+            font-size: 20px;
+            font-weight: 500;
+
+          }
+
+
+          .price {
+            max-width: 20%;
+
+            .mat-form-field {
+              width: 100%;
+            }
+          }
+        }
+
+        .chb-special {
+          font-size: 17px;
+          font-weight: 400;
+          letter-spacing: normal;
+
+        }
+      }
+
+      .upl-img {
+        padding: 0px 7%;
+        margin: 0;
+
+        .col {
+          width: 50%;
+          max-width: 50%;
+        }
+
+      }
+
+      .upl-img-step4 {
+        padding: 0px 7%;
+        margin: 0;
+        // .col{
+        //   width: 50%;
+        //   max-width: 50%;
+        // }
+
+      }
+
+      h1 {
+        padding: 0;
+        margin: 0;
+        margin-left: 2%;
+        padding-top: 2%;
+      }
+
+
+
+      .row-fill {
+
+        max-height: 55px;
+
+      }
+
+      .line {
+        width: 84%;
+        height: 1px;
+        border-radius: 1rem;
+        background-color: black;
+        margin-left: 2rem;
+        margin-top: -1px;
+        padding: 0%;
+      }
+
+      .fill {
+        width: 84%;
+        height: 30px;
+        border: none;
+        background: rgba(29, 36, 46, 0);
+        margin-top: 3%;
+        margin-left: 8%;
+        outline: none;
+        border: none;
+        font-size: large;
+
+      }
+
+      .fill-row-left {
+        margin-left: 16%;
+        width: 75%;
+      }
+
+      .fill-row-right {
+        width: 75%;
+      }
+
+      .fill-step2 {
+        width: 100%;
+        height: 25px;
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0%;
+      }
+
+      .row-fill {
+        padding: 0%;
+        margin: 0%;
+        margin-bottom: 10px;
+        width: 100%;
+        margin-left: 2rem;
+        height: 55px;
+
+        .icon {
+
+          font-size: 20px;
+          padding-top: 5%;
+          min-width: 6%;
+          width: 9%;
+          height: 100%;
+          float: left;
+        }
+
+        .text {
+          font-size: 20px;
+          padding: 0;
+          padding-top: 5%;
+          width: 35%;
+          height: 100%;
+          float: left;
+          margin-left: 1%;
+
+
+        }
+
+        .checkbox {
+          height: 100%;
+          padding-top: 5%;
+          width: 7%;
+          min-width: 4%;
+
+          float: left;
+        }
+
+        .icon-x {
+          width: 22px;
+          height: 22px;
+          font-size: 20px;
+          min-width: 20px;
+          float: left;
+          margin-left: 4%;
+          cursor: pointer;
+          text-align: center;
+          border-radius: 1rem;
+          line-height: 22px;
+          margin-top: 5%;
+        }
+
+
+
+        .input {
+          height: 100%;
+
+          float: left;
+          width: 36%;
+          line-height: 35px;
+
+          .col-input {
+            margin: 2px;
+            padding-top: 9%;
+
+            .col-input-amount {
+              outline: 1px solid #7f7f7f;
+              border-radius: 3px;
+              height: 30px;
+              width: 15rem;
+              font-size: 17px;
+              font-weight: 600;
+              text-align: center;
+
+              input ::placeholder {
+                color: #352a2a;
+              }
+
+
+            }
+
+            .value-name {
+              text-align: left;
+              padding-left: 10px;
+              width: 85%;
+
+            }
+
+            .col-input-amount:focus {
+              outline: 2px solid rgb(36, 36, 245);
+            }
+
+            input:hover {
+              outline: 2px solid black;
+            }
+
+
+          }
+
+        }
+
+
+      }
+
+      .textarea {
+        text-align: center;
+
+        .mat-form-field {
+          margin-left: 0%;
+        }
+
+      }
+
+      .col-right-2 {
+        min-width: 50%;
+
+        .row-fill {
+          margin-left: 1rem;
+        }
+      }
+
+      .click {
+
+        width: 200px;
+        cursor: pointer;
+        height: 45px;
+        border-radius: 1rem;
+        margin-left: 1rem;
+        padding-left: 1rem;
+
+        .icon {
+          min-width: 20px;
+          width: 40px;
+        }
+
+        .text {
+          width: auto;
+        }
+      }
+    }
+
+    .add-img {
+
+      text-align: center;
+      margin-top: 40px;
+
+      .img-homestay {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+          text-align: left;
+          margin: 0%;
+          padding: 0%;
+        }
+      }
+
+      .img-homestayLicense {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+          text-align: left;
+          margin: 0%;
+          padding: 0%;
+        }
+      }
+
+      .show-image {
+        width: 100%;
+
+        img {
+          margin: 5% 5% 0;
+          box-shadow: 0 0 5px #c4cacc;
+        }
+      }
+
+      .upload {
+        box-sizing: border-box;
+        width: 100%;
+
+        max-width: 100%;
+        height: 200px;
+        background: #D9D9D9;
+        border: 1px dashed #000000;
+        border-radius: 10px;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin: 0%;
+        padding: 0%;
+        margin-top: 1%;
+
+        color: black;
+
+        .icon-upload {
+          font-size: 40px;
+        }
+
+        header {
+          font-size: large;
+
+        }
+
+        .wrapper {
+          height: 100%;
+          padding: 0;
+          margin: 0;
+
+          .image-preview {
+            min-height: 91px !important;
+            height: 90px;
+          }
+        }
+
+
+      }
+    }
+
+
+    .add-btn {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 2%;
+
+
+      .btn-next {
+        width: 78px;
+        margin: 0 1%;
+        font-size: large;
+        font-weight: 500;
+      }
+
+      .submit {
+        width: 88px;
+      }
+
+      .btn-back,
+      .btn-reset {
+        width: 78px;
+        background-color: #D9D9D9;
+        margin: 0 1%;
+        font-size: large;
+        font-weight: 500;
+      }
+    }
+
+    .header {
+      margin: 10px 0px 0px 30px;
+
+      h1 {
+        margin: 0%;
+      }
+    }
+  }
+}
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field+.mat-form-field {
+  margin-left: 8px;
+}
+
+
+
+::ng-deep {
+
+  .NgxEditor {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom: none !important;
+    border-left: unset !important;
+    border-right: unset !important;
+    min-height: 170px;
+
+  }
+}
+
+.editor {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin-top: 3%;
+  margin-left: 8%;
+  width: 84%;
+}
+
+.card {
+  box-shadow: 0 0 5px #c4cacc;
+}
+
+.add-btn {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 2%;
+
+
+  .btn-next {
+    width: 78px;
+    margin: 0 1%;
+    font-size: large;
+    font-weight: 500;
+
+  }
+
+  .submit {
+    width: 88px;
+  }
+
+  .btn-back,
+  .btn-reset {
+    width: 78px;
+    background-color: #D9D9D9;
+    margin: 0 1%;
+    font-size: large;
+    font-weight: 500;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.img-step4 {
+  height: 220px !important;
+  max-width: 100% !important;
+}
+
+.special-step4 {
+  width: 84%;
+  margin-left: 8%;
+  padding-top: 3%;
+  z-index: -1;
+
+
+
+  .panel-header-special {
+    font-size: large;
+    padding-left: 10px;
+  }
+
+  .col {
+    min-width: 150px;
+  }
+
+  .right {
+    padding-left: 0%;
+    max-width: 38%;
+
+
+    .mat-form-field {
+      width: 48.5%;
+      min-width: 157px;
+      margin-right: 5px;
+    }
+  }
+
+  .left {
+    padding-right: 0%;
+    max-width: 40%;
+
+
+    .mat-form-field {
+      width: 48.5%;
+      min-width: 157px;
+      margin-right: 5px;
+    }
+  }
+
+  .line- {
+    width: fit-content;
+
+    padding-top: 55px;
+    margin: 5px 5px 5px 3px;
+    font-size: 20px;
+    font-weight: 500;
+
+  }
+
+
+  .price {
+    max-width: 20%;
+
+    .mat-form-field {
+      width: 100%;
+    }
+  }
+
+
+  .chb-special {
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: normal;
+
+  }
+}

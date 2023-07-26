@@ -1,0 +1,20 @@
+
+<div class="header">
+  <div><mat-icon class="mat-18">warning</mat-icon></div>
+  <div class="warnning">
+    Are you sure?
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    <div class="text">
+      <p>1. If your homestay has a reservation schedule, you have to wait for the reservation to expire. Then your
+        homestay will be deleted</p>
+      <p>2. If your homestay does not have a reservation schedule. Your homestay will be deleted</p>
+    </div>
+    <div class="button">
+      <button class="cancel" mat-button mat-dialog-close>No, cancel It!</button>
+      <button class="delete" mat-button mat-dialog-close (click)="deleteHomestay()">Yes, delete It!</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="container">
+
+  <mat-stepper #stepper>
+    <!-- <mat-stepper linear #stepper> -->
+
+    <!-- Step 1 Information -->
+    <mat-step [stepControl]="informationFormGroup">
+
+      <form [formGroup]="informationFormGroup" (ngSubmit)="informationForm()" #formone="ngForm">
+        <ng-template matStepLabel>Basic Information</ng-template>
+
+
+        <h1>Request Add Homestay Information</h1>
+        <div class="input-content card">
+          <div class="add-input">
+
+            <div class="row">
+              <div class="col left">
+                <!-- name -->
+                <div>
+                  <mat-form-field class="fill fill-row-left" appearance="legacy">
+                    <mat-label>Homestay's Name</mat-label>
+                    <input name="homestayname" matInput required
+                      formControlName="homestayName">
+                  </mat-form-field>
+                </div>
+
+
+
+
+              </div>
+
+            </div>
+
+
+            <!-- image -->
+
+
+          </div>
+
+
+
+          <div class="add-btn">
+            <button (click)="onRemoved()" class="btn-reset" mat-raised-button type="reset">Reset</button>
+            <button class="btn-next" color="primary" mat-raised-button matStepperNext>Next</button>
+          </div>
+        </div>
+      </form>
+    </mat-step>
+
+
+
+  </mat-stepper>
+</div>

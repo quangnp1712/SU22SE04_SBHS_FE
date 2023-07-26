@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="header">
+    <h1>Request Booking List</h1>
+  </div>
+  <div class="body card">
+    <div *ngIf="registerError != null"> <h1 style="color: red;">{{registerError}}</h1></div>
+    <div class="body-container">
+      <div style="width: 10%;">
+
+        <select [(ngModel)]="name" (ngModelChange)="getRequestBookingByName()" (ngModelChange)="getHomestayName()">
+          <option hidden>All</option>
+          <option>All</option>
+          <option *ngFor="let item of valueName">{{item.name}}</option>
+        </select>
+      </div>
+
+    </div>
+
+
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Mobile</th>
+          <th>Email</th>
+          <th>Arrive</th>
+          <th>Depart</th>
+          <th>Homestay</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of values | paginate:{
+          itemsPerPage: tableSize,
+          currentPage: page,
+          totalItems: count
+        };
+        let i = index">
+          <td>{{post.passengerName}}</td>
+          <td>{{post.passengerPhone}}</td>
+          <td>{{post.passengerEmail}}</td>
+          <td>{{post.checkIn}}</td>
+          <td>{{post.checkOut}}</td>
+          <td>{{post.homestayName}}</td>
+          <td>
+            <button mat-icon-button color="primary" (click)="onItemSelector(post.id);"
+              routerLink="/Landlord/Booking/BookingDetail" routerLinkActive="active"><i class="fa-solid fa-eye"></i></button>
+            <button mat-icon-button color="accent" (click)="onItemSelector(post.id);"
+              (click)="accept()"><i class="fa-solid fa-check"></i></button>
+            <button mat-icon-button color="warn" (click)="onItemSelector(post.id);"
+              (click)="reject()"><i class="fa-solid fa-xmark"></i></button>
+          </td>
+          <td><button (click)="onItemSelector(post.id)" (click)="checkIn()">Check-in</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="col-sm-9">
+        <div >
+          choose item in page:
+          <select (change)="onTableSizeChange($event)">
+            <option *ngFor="let size of tableSizes">
+              {{size}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+      </pagination-controls>
+      </div>
+
+    </div>
+  </div>
+</div>

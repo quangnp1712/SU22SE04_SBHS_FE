@@ -1,0 +1,266 @@
+<div class="wrapper">
+
+  <div class="body">
+    <div class="body-container">
+      <div class="row-avatar-infor">
+
+        <div class="avatar card">
+          <div class="div-avatar">
+            <img [src]="avatarUrl">
+          </div>
+
+          <div class="balance">
+
+
+            <aside id="info-block">
+              <section class="file-marker">
+                <div>
+                  <div class="box-title">
+                    Total Balance
+                  </div>
+                  <div class="box-contents">
+                    <div id="cash">
+                      <p>{{balance | currency:'VND'}}</p>
+                    </div>
+                  </div>
+
+                </div>
+
+              </section>
+            </aside>
+            <div class="box-footer">
+
+              <div class="btn-add" matRipple (click)="toggle.addBalance = !toggle.addBalance;
+                showDiv.addBalance= !showDiv.addBalance;
+                showDiv.cashOut = false; showDiv.changePass= false;showDiv.editProfile= false;"
+                [ngClass]="{'active' : toggle.addBalance, 'default': !toggle.addBalance}">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                Add Balance
+              </div>
+
+              <div class="btn-add" matRipple (click)="toggle.cashOut = !toggle.cashOut;
+                showDiv.cashOut = !showDiv.cashOut;
+                showDiv.changePass= false; showDiv.addBalance = false;showDiv.editProfile= false;"
+                [ngClass]="{'active' : toggle.cashOut, 'default': !toggle.cashOut}"> <i
+                  class="fa-solid fa-arrow-right-from-bracket"></i> Cash Out </div>
+
+              <div class="btn-add" matRipple (click)="toggle.editProfile = !toggle.editProfile;
+              showDiv.editProfile = !showDiv.editProfile;
+              showDiv.addBalance=false;showDiv.cashOut = false;showDiv.changePass= false;"
+                [ngClass]="{'active' : toggle.editProfile, 'default': !toggle.editProfile}"> <i
+                  class="fa-solid fa-arrow-right-from-bracket"></i> Update Profile </div>
+
+              <div class="btn-add" matRipple routerLink="/ForgetPassword">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Change Password
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <!-- Edit Information -->
+        <div class="infor ">
+          <div class="card-col card" *ngIf="showDiv.editProfile">
+
+            <div class="card-header">
+              <h1>Profile</h1>
+            </div>
+            <div class="posttitle">
+              <h2 class="posttitle-text">Update Profile</h2>
+            </div>
+            <div class="card-row">
+              <div class="col-left">
+                <!-- Username -->
+                <div class="fill">
+                  <div class="fill-text">
+                    <p>Username:</p>
+                  </div>
+
+                  <mat-form-field class="not-allow" appearance="legacy">
+                    <input disabled matInput [(ngModel)]="username">
+                  </mat-form-field>
+
+                  <!-- <p>{{username}}</p> -->
+
+                </div>
+                <!-- Email -->
+                <div class="fill">
+                  <div class="fill-text">
+                    <p>Email:</p>
+                  </div>
+                  <mat-form-field class="not-allow" appearance="legacy">
+                    <input disabled matInput [(ngModel)]="email">
+                  </mat-form-field>
+                </div>
+
+                <!-- Gender  -->
+                <div class="fill">
+                  <div class="fill-text">
+                    <p>Gender:</p>
+                  </div>
+                  <mat-form-field appearance="legacy">
+                    <mat-select [(ngModel)]="gender" [ngModelOptions]="{standalone: true}">
+                      <mat-option value="Male">Male </mat-option>
+                      <mat-option value="Female">Female </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+
+
+              </div>
+
+              <div class="col-right">
+                <!-- Dob  -->
+                <div class="fill">
+                  <div class="fill-text">
+                    <p>Day of Birth:</p>
+                  </div>
+
+                  <mat-form-field appearance="legacy">
+                    <input class="date" type="date" [min]="minDate" [max]="maxDate" name="date"
+                      onfocus="(this.type='date')" matInput [(ngModel)]="dob">
+                  </mat-form-field>
+                </div>
+
+                <!-- ID -->
+                <div class="fill">
+                  <div class="fill-text">
+                    <p>Citizen ID:</p>
+                  </div>
+
+                  <mat-form-field class="not-allow" appearance="legacy">
+                    <input disabled matInput [(ngModel)]="citizenIdentificationString">
+                  </mat-form-field>
+                </div>
+                <!-- Phone -->
+                <div class="fill">
+                  <div class="fill-text">
+                    <p>Phone:</p>
+                  </div>
+
+                  <mat-form-field appearance="legacy">
+                    <input name="phone" matInput [(ngModel)]="phone" pattern="^[0]\d{9,12}$" type="tel">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <!-- Address -->
+            <div class="address">
+              <div class="fill">
+                <div class="fill-text">
+                  <p>Address:</p>
+                </div>
+
+                <mat-form-field class="not-allow" appearance="legacy">
+                  <input matInput [(ngModel)]="address">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="button">
+              <button class="btn-accept" color="primary" mat-raised-button>Update</button>
+            </div>
+
+          </div>
+
+          <!-- Add Balance -->
+          <div class="card-col card" *ngIf="showDiv.addBalance">
+
+            <div class="card-header">
+              <h1>Add Balance</h1>
+            </div>
+            <div class="card-row-addBalance">
+              <div class="p-header-text">
+                <p>How much balance would you like to add?</p>
+              </div>
+              <div class="p-text">
+                <p>Type or select the amount below</p>
+              </div>
+              <div class="input-cash">
+                <mat-form-field class="cash-input" appearance="outline">
+                  <mat-label>Cash</mat-label>
+                  <span matPrefix> <i class="fa-solid fa-dong-sign"></i> &nbsp;</span>
+                  <input type="number" matInput placeholder="1.000" [(ngModel)]="amount">
+                </mat-form-field>
+              </div>
+              <div class="total-cash">
+                <h2>Total: {{amount | currency:'VND'}}</h2>
+              </div>
+
+
+
+            </div>
+            <div class="button">
+              <button class="btn-denied" mat-raised-button>Cancel</button>
+              <button class="btn-accept" color="primary" mat-raised-button (click)="addMoney()">Submit</button>
+            </div>
+          </div>
+
+          <!-- Cash Out -->
+          <div class="card-col card" *ngIf="showDiv.cashOut">
+            <div class="card-header">
+              <h1>Cash Out</h1>
+            </div>
+            <div class="posttitle">
+              <h2 class="posttitle-text">Bank account</h2>
+            </div>
+            <div class="card-row-addBalance">
+              <div>
+                <img src="/assets/image/logo-momo.png" class="logo-momo">
+              </div>
+
+              <div class="input-acc-num">
+                <p>Telephone: </p>
+                <mat-form-field class="cash-input" appearance="outline">
+                  <input type="tel" matInput placeholder="090xxx" [(ngModel)]="phoneWithdraw">
+                </mat-form-field>
+              </div>
+            </div>
+            <hr>
+
+            <div class="posttitle">
+              <h2 class="posttitle-text">Information Request</h2>
+            </div>
+            <div class="card-row-addBalance">
+              <div class="p-header-text">
+                <p>How much balance would you like to cash out?</p>
+              </div>
+              <div class="p-text">
+                <p>Type or select the amount below</p>
+              </div>
+              <div class="input-cash">
+                <mat-form-field class="cash-input" appearance="outline">
+                  <mat-label>Cash</mat-label>
+                  <span matPrefix> <i class="fa-solid fa-dong-sign"></i> &nbsp;</span>
+                  <input type="number" matInput placeholder="1.000" [(ngModel)]="amountWithdraw">
+                </mat-form-field>
+              </div>
+              <div class="total-cash">
+                <h2>Total: {{ amount | currency:'VND'}}</h2>
+              </div>
+              <div class="input-acc-num ">
+                <p>Confirm Password: </p>
+                <mat-form-field class="cash-input password" appearance="outline">
+                  <input type="password" matInput [(ngModel)]="passwordWithdraw">
+                </mat-form-field>
+              </div>
+              <div class="button">
+                <button class="btn-denied" mat-raised-button>Cancel</button>
+                <button class="btn-accept" color="primary" mat-raised-button (click)="cashOut()">Submit</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+</div>

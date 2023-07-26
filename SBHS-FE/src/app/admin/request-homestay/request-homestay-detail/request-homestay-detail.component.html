@@ -1,0 +1,212 @@
+<div class="wrapper">
+  <!-- <div *ngIf="registerError != null"> <h1 style="color: red;">{{registerError}}</h1></div> -->
+  <div class="card card-homestay">
+    <h1 class="header">Homestay Information </h1>
+    <div class="homestay">
+      <div class="infor">
+        <div class="infor-row">
+          <div class="infor-col">
+            <!-- Landlord name -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Landlord Name:</p>
+              </div>
+              <div class="fill-input">
+                <p>{{createdBy}}</p>
+              </div>
+            </div>
+            <!-- Homestay name -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Homestay Name:</p>
+              </div>
+              <div class="fill-input">
+                <p>{{homestayName}}</p>
+              </div>
+            </div>
+            <!-- Price -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Price:</p>
+              </div>
+              <div class="fill-input price">
+                <p>{{price}}</p>
+              </div>
+            </div>
+            <!-- Check-in time -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Check-in time:</p>
+              </div>
+              <div class="fill-input">
+                <p>{{checkInTime}}</p>
+              </div>
+            </div>
+            <!-- Address -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Address:</p>
+              </div>
+              <div class="fill-input-address">
+                <p>{{address}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="infor-col">
+            <!-- email -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Email:</p>
+              </div>
+              <div class="fill-input">
+                <p>{{createdByEmail}}</p>
+              </div>
+            </div>
+            <!-- Number of room -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Number of room:</p>
+              </div>
+              <div class="fill-input">
+                <p>{{numberOfRoom}}</p>
+              </div>
+            </div>
+            <!-- Gender -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>City:</p>
+              </div>
+              <div class="fill-input">
+                <p>{{city}}</p>
+              </div>
+            </div>
+            <!-- Check-out time -->
+            <div class="fill">
+              <div class="fill-text">
+                <p>Check-out time:</p>
+              </div>
+              <div class="fill-input">
+                <p>{{checkOutTime}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- description -->
+        <div class="description">
+          <div class="fill">
+            <div class="fill-text">
+              <p>Description:</p>
+            </div>
+            <!-- <div class="fill-input-address">
+              <textarea readonly>{{description}}</textarea>
+            </div> -->
+
+          </div>
+        </div>
+        <div class="editor fill-input-address">
+          <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+          <ngx-editor readonly class="edit-text" [editor]="editor" >{{description}}
+          </ngx-editor>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card card-image">
+    <h1 class="header">Image License</h1>
+    <div class="image">
+      <div class="image-file">
+        <img [src]="imageLicenseUrl">
+      </div>
+
+
+    </div>
+  </div>
+  <div class="card card-image">
+    <h1 class="header">Image Homstay</h1>
+    <div class="image">
+      <div class="image-file" *ngFor="let item of homestayImagesList">
+        <img [src]="item">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h1 class="header">Facility Information</h1>
+    <div class="facility">
+      <div class="infor">
+
+
+        <div class="infor-col">
+
+          <!-- number 1 -->
+          <div class="fill" *ngFor="let item of homestayFacilityList">
+            <!-- NO -->
+            <!-- <div class="fill-text">
+              <p>NO.</p>
+              <p class="number">1</p>
+            </div> -->
+            <!-- Name -->
+            <div class="fill-text">
+              <p>Name:</p>
+            </div>
+            <div class="fill-input">
+              <p>{{item.name}}</p>
+            </div>
+            <!-- <div class="fill-text">
+              <p>Icon.</p>
+              <p class="number">1</p>
+            </div> -->
+            <div class="fill-text">
+              <p>Amount: </p>
+              <p class="number">{{item.amount}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <h1 class="header">Service Information</h1>
+    <div class="facility service">
+      <div class="infor">
+
+
+        <div class="infor-col">
+
+          <!-- number 1 -->
+          <div class="fill" *ngFor="let item of homestayAftercareList">
+            <!-- NO -->
+            <!-- <div class="fill-text">
+              <p>NO.</p>
+              <p class="number">1</p>
+            </div> -->
+            <!-- Name -->
+            <div class="fill-text">
+              <p>Name:</p>
+            </div>
+            <div class="fill-input">
+              <p>{{item.name}}</p>
+            </div>
+            <!-- <div class="fill-text">
+              <p>Icon.</p>
+              <p class="number">1</p>
+            </div> -->
+            <div class="fill-text">
+              <p>Price: {{item.price}} VND</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="button">
+     <button class="btn-denied" mat-raised-button (click)="reject()">Denied</button>
+     <button class="btn-accept" mat-raised-button (click)="accept()">Accept</button>
+
+  </div>
+</div>
